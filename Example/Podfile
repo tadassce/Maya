@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'Maya_Example', :exclusive => true do
+  pod 'Maya', :path => '../'
+end
+
+target 'Maya_Tests', :exclusive => true do
+  pod 'Maya', :path => '../'
+
+  
+end
