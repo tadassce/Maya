@@ -20,11 +20,11 @@ class ViewController: UIViewController {
     calendarView.weekdays = ["su", "mo", "tu", "we", "th", "fr", "sa"]
     calendarView.monthFont = .boldSystemFontOfSize(18)
     calendarView.weekdayFont = .systemFontOfSize(15)
-    calendarView.weekdayFont = .systemFontOfSize(16)
+    calendarView.dayFont = .systemFontOfSize(16)
     calendarView.weekdayTextColor = .blackColor()
-    calendarView.firstMonth = MayaMonth(month: 1, year: 2018)
-    calendarView.lastMonth = MayaMonth(month: 12, year: 2018)
-    calendarView.currentMonth = MayaMonth(month: 8, year: 2018)
+    calendarView.firstMonth = MayaMonth(month: 1, year: 2016)
+    calendarView.lastMonth = MayaMonth(month: 8, year: 2016)
+    calendarView.currentMonth = MayaMonth(month: 3, year: 2016)
   }
 
   override func didReceiveMemoryWarning() {

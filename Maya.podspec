@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "Maya"
   s.version          = "1.0"
-  s.summary          = "A short description of Maya."
+  s.summary          = "Maya is a customizable calendar library with an out of the box MayaCalendarView"
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,6 +17,8 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
+Maya is a customizable calendar library with an out of the box MayaCalendarView.
+Maya also includes a few helper classes to make managing dates a little bit easier (MayaDate, MayaWeekday and MayaMonth)
                        DESC
 
   s.homepage         = "https://github.com/ivanbruel/Maya"

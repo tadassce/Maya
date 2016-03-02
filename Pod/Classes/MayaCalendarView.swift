@@ -106,7 +106,8 @@ public class MayaCalendarView: UIView {
   }
 
   override public func layoutSubviews() {
-    collectionViewFlowLayout.invalidateLayout()
+    collectionView.layoutIfNeeded()
+    collectionView.reloadData()
     scrollToMonth(_currentMonth)
   }
 
