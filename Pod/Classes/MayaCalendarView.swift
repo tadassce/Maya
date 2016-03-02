@@ -14,7 +14,7 @@ public class MayaCalendarView: UIView {
   private var forwardButton: UIButton = UIButton(type: .System)
   private var monthLabel: UILabel = UILabel(frame: .zero)
   private var collectionView: UICollectionView
-  private var collectionViewFlowLayout: UICollectionViewFlowLayout = MayaCollectionViewFlowLayout()
+  private var collectionViewFlowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 
   public var dataSource: MayaCalendarDataSource?
   public var delegate:  MayaCalendarDelegate?
@@ -106,6 +106,7 @@ public class MayaCalendarView: UIView {
   }
 
   override public func layoutSubviews() {
+    collectionViewFlowLayout.invalidateLayout()
     scrollToMonth(_currentMonth)
   }
 
