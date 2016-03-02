@@ -1,0 +1,14 @@
+PODS:
+  - Maya (0.1.0)
+
+DEPENDENCIES:
+  - Maya (from `../`)
+
+EXTERNAL SOURCES:
+  Maya:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Maya: f5c9408de968202bd2fcb515fee150a9ef5ab3b6
+
+COCOAPODS: 0.39.0

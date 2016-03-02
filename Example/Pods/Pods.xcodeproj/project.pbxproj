@@ -1,0 +1,824 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0EB6663640F654458538AF0EF53532EB /* Maya-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D281BBC5A7B330E4ED1FC6F80B7E98 /* Maya-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E313E4868D257D131D1DC4CE2782584 /* Pods-Maya_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D73B879149B899E66F9A3E03E1F6AA0 /* Pods-Maya_Example-dummy.m */; };
+		23E1BC9D5182B72C047C8E11B0A34143 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		30C3083A1C874B03000F5A63 /* MayaCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C308391C874B03000F5A63 /* MayaCollectionViewFlowLayout.swift */; };
+		313E478D9EA2C263CA6B626AB19263BD /* MayaMonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE48091E99917CC5C8D9EE595366AA0 /* MayaMonthViewModel.swift */; };
+		33335B87126A2EE3E22D77CDC76E592C /* MayaDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8712F31395B8AB564E662CDDC20BA89 /* MayaDayViewModel.swift */; };
+		42643E4E5A5DB374E8D4C6EDB1F2E7DE /* MayaWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB916914C829D7AA439C330960A203C3 /* MayaWeekday.swift */; };
+		434EE69291A79B409670FECBCC0DF76C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		4C1860B4E644D60169D4A99FFC148655 /* MayaMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABF71E34747A28F47D6AF32785ACA35 /* MayaMonth.swift */; };
+		5323F6741AA071D39346B34DAA2E974A /* MayaCalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA935435BD3C0E5B1467EDED585DE6F /* MayaCalendarDataSource.swift */; };
+		5378EA65ED09909C6549C2EDE04FADBC /* Pods-Maya_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B4A06117E0E77D4BA5BA790A60630AD5 /* Pods-Maya_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63AD8FE178592866FDA1E440B131CA14 /* MayaDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB206752F3473D7368F246897FF5A7F4 /* MayaDate.swift */; };
+		6E73578D407DAB82B6D0EE642C5DBA6B /* MayaCalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA9FC6C01B6E5E0C425B4F5B61F3B0 /* MayaCalendarDelegate.swift */; };
+		99B654553404B769B7D082013CCA592E /* Maya.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AAD8348AFBC60E46A95385F4F8493FA4 /* Maya.bundle */; };
+		A6E5A1F7D8D898FB54D8D6252F043A2E /* Maya-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 115FA7F01F6B9F2A7B6B6A88D480DAA5 /* Maya-dummy.m */; };
+		DA1544BA3EC0499EC4EA1F68A8A8210A /* Pods-Maya_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 64BCAC5792259331EB014C5118F92ADD /* Pods-Maya_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFB13A6CE2D1AA1D90AB059A71A25C4F /* MayaCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43A78CB05DE92127CE15C92CDCEEE26 /* MayaCalendarView.swift */; };
+		E0799E52697724862C4518A4685A54F5 /* MayaCalendarMonthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74921FF9ED8F7C7497F7498FC9D4FE5 /* MayaCalendarMonthCollectionViewCell.swift */; };
+		ECFE7D7B9BF34205D48B38222F28C8E6 /* MayaCalendarMonthCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 0FA730B28AB5FF6AC24385A6A1CFC1E7 /* MayaCalendarMonthCollectionViewCell.xib */; };
+		F687B176124893262B388CF9D5166279 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		FA8F95354E050B68939A1A9A1E5EBCA9 /* Pods-Maya_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ADCEF1A52382AC1AF2013842A8A3BB /* Pods-Maya_Tests-dummy.m */; };
+		FD54B23DBD3FF18911FEEC845305D27C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		004FD03C40844ED1E9627B3F8B377582 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69C7871F20F8CEFF1E2F1A52212E69CA;
+			remoteInfo = "Maya-Maya";
+		};
+		975EF58C21799722ABDAA4C6AFDE2AD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D5D2A96AE93F9B78CE4C4D0E31162CB;
+			remoteInfo = Maya;
+		};
+		99E846A4A2B81F54071534FF04B0519C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D5D2A96AE93F9B78CE4C4D0E31162CB;
+			remoteInfo = Maya;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01E48115C35F976E9A01E6A7A6312CBA /* Pods-Maya_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Maya_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		050C72B4C440FAFC0610AFEF964E9D7A /* Pods-Maya_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Maya_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		0B8EE7E41F06490C5BC48E67FA4E862B /* Pods-Maya_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Maya_Example.release.xcconfig"; sourceTree = "<group>"; };
+		0CA935435BD3C0E5B1467EDED585DE6F /* MayaCalendarDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MayaCalendarDataSource.swift; sourceTree = "<group>"; };
+		0FA730B28AB5FF6AC24385A6A1CFC1E7 /* MayaCalendarMonthCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = MayaCalendarMonthCollectionViewCell.xib; sourceTree = "<group>"; };
+		115FA7F01F6B9F2A7B6B6A88D480DAA5 /* Maya-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Maya-dummy.m"; sourceTree = "<group>"; };
+		15ADCEF1A52382AC1AF2013842A8A3BB /* Pods-Maya_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Maya_Tests-dummy.m"; sourceTree = "<group>"; };
+		1F49645DB088705101E07F45DD45F90C /* Pods-Maya_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Maya_Example.modulemap"; sourceTree = "<group>"; };
+		220E6FFAFF8B0B0E06A31234982A73F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27634A8C881C69EAF85A7D290E1EC0F0 /* Pods-Maya_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Maya_Tests.modulemap"; sourceTree = "<group>"; };
+		2C5925BF9338258C2083CD7320EFD88C /* Maya.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Maya.xcconfig; sourceTree = "<group>"; };
+		2FE48091E99917CC5C8D9EE595366AA0 /* MayaMonthViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MayaMonthViewModel.swift; sourceTree = "<group>"; };
+		30C308391C874B03000F5A63 /* MayaCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MayaCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		34CA13A2EEFAFCED562774F2B256EDDF /* Pods-Maya_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Maya_Example-frameworks.sh"; sourceTree = "<group>"; };
+		3D73B879149B899E66F9A3E03E1F6AA0 /* Pods-Maya_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Maya_Example-dummy.m"; sourceTree = "<group>"; };
+		429B9753FC3E9748E5298E6CB11FB116 /* Maya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Maya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		439E6AA4BD1FD972BF781F91482B6FB4 /* Maya-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Maya-prefix.pch"; sourceTree = "<group>"; };
+		43A804A013F9D580E6C98C35E5496B1D /* Pods_Maya_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maya_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		476177A684E3EC9C88DEA1890F5C2A32 /* Pods-Maya_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Maya_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		53D281BBC5A7B330E4ED1FC6F80B7E98 /* Maya-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Maya-umbrella.h"; sourceTree = "<group>"; };
+		64BCAC5792259331EB014C5118F92ADD /* Pods-Maya_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Maya_Example-umbrella.h"; sourceTree = "<group>"; };
+		6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		793574F0A89CE9E415D6855A1C4D2667 /* Pods-Maya_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Maya_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		80CA9FC6C01B6E5E0C425B4F5B61F3B0 /* MayaCalendarDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MayaCalendarDelegate.swift; sourceTree = "<group>"; };
+		80DE845255626BFE16812360816C9AB7 /* Pods-Maya_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Maya_Tests-resources.sh"; sourceTree = "<group>"; };
+		85CE62F5CE0CB868BE9A5CB08AC41EE8 /* Pods_Maya_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maya_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89AFC5D10ED540DED5EBF575E08B8B3C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90498CB61ABA82960F7FB5EA1C8227B9 /* Pods-Maya_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Maya_Example-resources.sh"; sourceTree = "<group>"; };
+		91D805847668A8CF287877A57C32452D /* Pods-Maya_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Maya_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		986BFF6E422D73CDB5E6BF74B7B85190 /* Pods-Maya_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Maya_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9D4EF927EB47804DA736D7EAC01523AE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A211BDB3B73498FB6E227DA68D544289 /* Pods-Maya_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Maya_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		AAD8348AFBC60E46A95385F4F8493FA4 /* Maya.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Maya.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4A06117E0E77D4BA5BA790A60630AD5 /* Pods-Maya_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Maya_Tests-umbrella.h"; sourceTree = "<group>"; };
+		B8712F31395B8AB564E662CDDC20BA89 /* MayaDayViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MayaDayViewModel.swift; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BB916914C829D7AA439C330960A203C3 /* MayaWeekday.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MayaWeekday.swift; sourceTree = "<group>"; };
+		C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D0A33CE0F7D7963444D73EE7DE65A4A1 /* Pods-Maya_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Maya_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D3D40AFC46E4147682D67F18A8C15B96 /* Maya.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Maya.modulemap; sourceTree = "<group>"; };
+		D74921FF9ED8F7C7497F7498FC9D4FE5 /* MayaCalendarMonthCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MayaCalendarMonthCollectionViewCell.swift; sourceTree = "<group>"; };
+		E43A78CB05DE92127CE15C92CDCEEE26 /* MayaCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MayaCalendarView.swift; sourceTree = "<group>"; };
+		EABF71E34747A28F47D6AF32785ACA35 /* MayaMonth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MayaMonth.swift; sourceTree = "<group>"; };
+		FB206752F3473D7368F246897FF5A7F4 /* MayaDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MayaDate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		258C2A7E82297B3A7E20F43A83D3D8A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434EE69291A79B409670FECBCC0DF76C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8039606CA5892118843F002068387DCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C02E355ECE1BA4ABE947C284A0CC1084 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F687B176124893262B388CF9D5166279 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8B61777AC706B26D67B4D1FC770D4EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23E1BC9D5182B72C047C8E11B0A34143 /* Foundation.framework in Frameworks */,
+				FD54B23DBD3FF18911FEEC845305D27C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18340F12838DEE43507667CC74401EB1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */,
+				C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		2B9464963F6FF694A5B7B9242DF2F697 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A992BC303CCACAC216B4CADBA1A35F05 /* Pods-Maya_Example */,
+				6EC02BDE0ABDDA86F1B31695AEB774C4 /* Pods-Maya_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		32746EAC41C569D64DAB487C087502FA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				220E6FFAFF8B0B0E06A31234982A73F9 /* Info.plist */,
+				D3D40AFC46E4147682D67F18A8C15B96 /* Maya.modulemap */,
+				2C5925BF9338258C2083CD7320EFD88C /* Maya.xcconfig */,
+				115FA7F01F6B9F2A7B6B6A88D480DAA5 /* Maya-dummy.m */,
+				439E6AA4BD1FD972BF781F91482B6FB4 /* Maya-prefix.pch */,
+				53D281BBC5A7B330E4ED1FC6F80B7E98 /* Maya-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Maya";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18340F12838DEE43507667CC74401EB1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		61427FFAA0F5FE71ED103FA4C7FF35AB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0CA935435BD3C0E5B1467EDED585DE6F /* MayaCalendarDataSource.swift */,
+				80CA9FC6C01B6E5E0C425B4F5B61F3B0 /* MayaCalendarDelegate.swift */,
+				D74921FF9ED8F7C7497F7498FC9D4FE5 /* MayaCalendarMonthCollectionViewCell.swift */,
+				0FA730B28AB5FF6AC24385A6A1CFC1E7 /* MayaCalendarMonthCollectionViewCell.xib */,
+				E43A78CB05DE92127CE15C92CDCEEE26 /* MayaCalendarView.swift */,
+				FB206752F3473D7368F246897FF5A7F4 /* MayaDate.swift */,
+				B8712F31395B8AB564E662CDDC20BA89 /* MayaDayViewModel.swift */,
+				EABF71E34747A28F47D6AF32785ACA35 /* MayaMonth.swift */,
+				2FE48091E99917CC5C8D9EE595366AA0 /* MayaMonthViewModel.swift */,
+				BB916914C829D7AA439C330960A203C3 /* MayaWeekday.swift */,
+				30C308391C874B03000F5A63 /* MayaCollectionViewFlowLayout.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6D9358B01A0F774E6B9959FF975D8B42 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				61427FFAA0F5FE71ED103FA4C7FF35AB /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		6DBA938E3F3F34FBCC1A7052FE8E79BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAD8348AFBC60E46A95385F4F8493FA4 /* Maya.bundle */,
+				429B9753FC3E9748E5298E6CB11FB116 /* Maya.framework */,
+				43A804A013F9D580E6C98C35E5496B1D /* Pods_Maya_Example.framework */,
+				85CE62F5CE0CB868BE9A5CB08AC41EE8 /* Pods_Maya_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6EC02BDE0ABDDA86F1B31695AEB774C4 /* Pods-Maya_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				89AFC5D10ED540DED5EBF575E08B8B3C /* Info.plist */,
+				27634A8C881C69EAF85A7D290E1EC0F0 /* Pods-Maya_Tests.modulemap */,
+				91D805847668A8CF287877A57C32452D /* Pods-Maya_Tests-acknowledgements.markdown */,
+				01E48115C35F976E9A01E6A7A6312CBA /* Pods-Maya_Tests-acknowledgements.plist */,
+				15ADCEF1A52382AC1AF2013842A8A3BB /* Pods-Maya_Tests-dummy.m */,
+				793574F0A89CE9E415D6855A1C4D2667 /* Pods-Maya_Tests-frameworks.sh */,
+				80DE845255626BFE16812360816C9AB7 /* Pods-Maya_Tests-resources.sh */,
+				B4A06117E0E77D4BA5BA790A60630AD5 /* Pods-Maya_Tests-umbrella.h */,
+				A211BDB3B73498FB6E227DA68D544289 /* Pods-Maya_Tests.debug.xcconfig */,
+				050C72B4C440FAFC0610AFEF964E9D7A /* Pods-Maya_Tests.release.xcconfig */,
+			);
+			name = "Pods-Maya_Tests";
+			path = "Target Support Files/Pods-Maya_Tests";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				FDCA94AF7ACAC21F15413A374D03A3D3 /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				6DBA938E3F3F34FBCC1A7052FE8E79BE /* Products */,
+				2B9464963F6FF694A5B7B9242DF2F697 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A992BC303CCACAC216B4CADBA1A35F05 /* Pods-Maya_Example */ = {
+			isa = PBXGroup;
+			children = (
+				9D4EF927EB47804DA736D7EAC01523AE /* Info.plist */,
+				1F49645DB088705101E07F45DD45F90C /* Pods-Maya_Example.modulemap */,
+				D0A33CE0F7D7963444D73EE7DE65A4A1 /* Pods-Maya_Example-acknowledgements.markdown */,
+				476177A684E3EC9C88DEA1890F5C2A32 /* Pods-Maya_Example-acknowledgements.plist */,
+				3D73B879149B899E66F9A3E03E1F6AA0 /* Pods-Maya_Example-dummy.m */,
+				34CA13A2EEFAFCED562774F2B256EDDF /* Pods-Maya_Example-frameworks.sh */,
+				90498CB61ABA82960F7FB5EA1C8227B9 /* Pods-Maya_Example-resources.sh */,
+				64BCAC5792259331EB014C5118F92ADD /* Pods-Maya_Example-umbrella.h */,
+				986BFF6E422D73CDB5E6BF74B7B85190 /* Pods-Maya_Example.debug.xcconfig */,
+				0B8EE7E41F06490C5BC48E67FA4E862B /* Pods-Maya_Example.release.xcconfig */,
+			);
+			name = "Pods-Maya_Example";
+			path = "Target Support Files/Pods-Maya_Example";
+			sourceTree = "<group>";
+		};
+		B767FF2EF2B427E71E225EA5F5E4140D /* Maya */ = {
+			isa = PBXGroup;
+			children = (
+				6D9358B01A0F774E6B9959FF975D8B42 /* Pod */,
+				32746EAC41C569D64DAB487C087502FA /* Support Files */,
+			);
+			name = Maya;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		FDCA94AF7ACAC21F15413A374D03A3D3 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B767FF2EF2B427E71E225EA5F5E4140D /* Maya */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4EE8F14CFCA725C6640F95652F1791F2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1544BA3EC0499EC4EA1F68A8A8210A /* Pods-Maya_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AD904F55CC9AC55C6DF72EB060B9734 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EB6663640F654458538AF0EF53532EB /* Maya-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3E54BEE2C751BAEC8616E6DF1954B12 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5378EA65ED09909C6549C2EDE04FADBC /* Pods-Maya_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5B896937147754AD7258C06EA3CAD867 /* Pods-Maya_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD0C5CEEC493345C49C105992BF28F3D /* Build configuration list for PBXNativeTarget "Pods-Maya_Example" */;
+			buildPhases = (
+				76F99614F3E0A5B086AD6AF350A1B3E3 /* Sources */,
+				C02E355ECE1BA4ABE947C284A0CC1084 /* Frameworks */,
+				4EE8F14CFCA725C6640F95652F1791F2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A5E22F04A26CC0F479FC1B2E26BA251 /* PBXTargetDependency */,
+			);
+			name = "Pods-Maya_Example";
+			productName = "Pods-Maya_Example";
+			productReference = 43A804A013F9D580E6C98C35E5496B1D /* Pods_Maya_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		69C7871F20F8CEFF1E2F1A52212E69CA /* Maya-Maya */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D239087F34B757BA5FFE77037F7044FE /* Build configuration list for PBXNativeTarget "Maya-Maya" */;
+			buildPhases = (
+				AAB72C024A154CECE4232BBC814D35AB /* Sources */,
+				8039606CA5892118843F002068387DCD /* Frameworks */,
+				3F4AB1F990805E54FB4AAE7238A72C03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Maya-Maya";
+			productName = "Maya-Maya";
+			productReference = AAD8348AFBC60E46A95385F4F8493FA4 /* Maya.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		9D5D2A96AE93F9B78CE4C4D0E31162CB /* Maya */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80EB2CEBA6660F8ECDC8568CC122FDF1 /* Build configuration list for PBXNativeTarget "Maya" */;
+			buildPhases = (
+				B47434DE823872F6E973431DC09E5671 /* Sources */,
+				E8B61777AC706B26D67B4D1FC770D4EC /* Frameworks */,
+				391F892389DA3E68532B821C9FC7DC19 /* Resources */,
+				7AD904F55CC9AC55C6DF72EB060B9734 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05C611844E4C3D8AF9DA7E4927B35251 /* PBXTargetDependency */,
+			);
+			name = Maya;
+			productName = Maya;
+			productReference = 429B9753FC3E9748E5298E6CB11FB116 /* Maya.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FB4C84B954F560B9EFB04407CCE8270B /* Pods-Maya_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 633C8194EB531724D46846B97D962904 /* Build configuration list for PBXNativeTarget "Pods-Maya_Tests" */;
+			buildPhases = (
+				12FAC319F6F7DDC5965BE1E24F7E38E5 /* Sources */,
+				258C2A7E82297B3A7E20F43A83D3D8A9 /* Frameworks */,
+				A3E54BEE2C751BAEC8616E6DF1954B12 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03F80D1CD61B7FDF0EA4C004C27A70EF /* PBXTargetDependency */,
+			);
+			name = "Pods-Maya_Tests";
+			productName = "Pods-Maya_Tests";
+			productReference = 85CE62F5CE0CB868BE9A5CB08AC41EE8 /* Pods_Maya_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 6DBA938E3F3F34FBCC1A7052FE8E79BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D5D2A96AE93F9B78CE4C4D0E31162CB /* Maya */,
+				69C7871F20F8CEFF1E2F1A52212E69CA /* Maya-Maya */,
+				5B896937147754AD7258C06EA3CAD867 /* Pods-Maya_Example */,
+				FB4C84B954F560B9EFB04407CCE8270B /* Pods-Maya_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		391F892389DA3E68532B821C9FC7DC19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99B654553404B769B7D082013CCA592E /* Maya.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F4AB1F990805E54FB4AAE7238A72C03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12FAC319F6F7DDC5965BE1E24F7E38E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA8F95354E050B68939A1A9A1E5EBCA9 /* Pods-Maya_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76F99614F3E0A5B086AD6AF350A1B3E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E313E4868D257D131D1DC4CE2782584 /* Pods-Maya_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAB72C024A154CECE4232BBC814D35AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47434DE823872F6E973431DC09E5671 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6E5A1F7D8D898FB54D8D6252F043A2E /* Maya-dummy.m in Sources */,
+				E0799E52697724862C4518A4685A54F5 /* MayaCalendarMonthCollectionViewCell.swift in Sources */,
+				30C3083A1C874B03000F5A63 /* MayaCollectionViewFlowLayout.swift in Sources */,
+				5323F6741AA071D39346B34DAA2E974A /* MayaCalendarDataSource.swift in Sources */,
+				6E73578D407DAB82B6D0EE642C5DBA6B /* MayaCalendarDelegate.swift in Sources */,
+				ECFE7D7B9BF34205D48B38222F28C8E6 /* MayaCalendarMonthCollectionViewCell.xib in Sources */,
+				DFB13A6CE2D1AA1D90AB059A71A25C4F /* MayaCalendarView.swift in Sources */,
+				63AD8FE178592866FDA1E440B131CA14 /* MayaDate.swift in Sources */,
+				33335B87126A2EE3E22D77CDC76E592C /* MayaDayViewModel.swift in Sources */,
+				4C1860B4E644D60169D4A99FFC148655 /* MayaMonth.swift in Sources */,
+				313E478D9EA2C263CA6B626AB19263BD /* MayaMonthViewModel.swift in Sources */,
+				42643E4E5A5DB374E8D4C6EDB1F2E7DE /* MayaWeekday.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03F80D1CD61B7FDF0EA4C004C27A70EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Maya;
+			target = 9D5D2A96AE93F9B78CE4C4D0E31162CB /* Maya */;
+			targetProxy = 99E846A4A2B81F54071534FF04B0519C /* PBXContainerItemProxy */;
+		};
+		05C611844E4C3D8AF9DA7E4927B35251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Maya-Maya";
+			target = 69C7871F20F8CEFF1E2F1A52212E69CA /* Maya-Maya */;
+			targetProxy = 004FD03C40844ED1E9627B3F8B377582 /* PBXContainerItemProxy */;
+		};
+		1A5E22F04A26CC0F479FC1B2E26BA251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Maya;
+			target = 9D5D2A96AE93F9B78CE4C4D0E31162CB /* Maya */;
+			targetProxy = 975EF58C21799722ABDAA4C6AFDE2AD2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		005290992961DFC73D89AEA2CC419023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 050C72B4C440FAFC0610AFEF964E9D7A /* Pods-Maya_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Maya_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Maya_Tests/Pods-Maya_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Maya_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		64866D7C3D2AA8FD6AE987BABBBED484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 986BFF6E422D73CDB5E6BF74B7B85190 /* Pods-Maya_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Maya_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Maya_Example/Pods-Maya_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Maya_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8049133124EACBDB0FE6A0138534F60D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A211BDB3B73498FB6E227DA68D544289 /* Pods-Maya_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Maya_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Maya_Tests/Pods-Maya_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Maya_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9BDA89169BFE1387F4E822CBCFD879A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C5925BF9338258C2083CD7320EFD88C /* Maya.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Maya;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		D2AE1C88B0411D694A28A48CF29C773B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C5925BF9338258C2083CD7320EFD88C /* Maya.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Maya/Maya-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Maya/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Maya/Maya.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Maya;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D4081717D009E81BBCE577480ED75C2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C5925BF9338258C2083CD7320EFD88C /* Maya.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Maya/Maya-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Maya/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Maya/Maya.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Maya;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E8CFCFE0356E69E19F3641966E75FBE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B8EE7E41F06490C5BC48E67FA4E862B /* Pods-Maya_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Maya_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Maya_Example/Pods-Maya_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Maya_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F44559BF1AEBCB9642505C9EBA351578 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C5925BF9338258C2083CD7320EFD88C /* Maya.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = Maya;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */,
+				74857149DC1E0D599B8A01A78349A926 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		633C8194EB531724D46846B97D962904 /* Build configuration list for PBXNativeTarget "Pods-Maya_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8049133124EACBDB0FE6A0138534F60D /* Debug */,
+				005290992961DFC73D89AEA2CC419023 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80EB2CEBA6660F8ECDC8568CC122FDF1 /* Build configuration list for PBXNativeTarget "Maya" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4081717D009E81BBCE577480ED75C2C /* Debug */,
+				D2AE1C88B0411D694A28A48CF29C773B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD0C5CEEC493345C49C105992BF28F3D /* Build configuration list for PBXNativeTarget "Pods-Maya_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64866D7C3D2AA8FD6AE987BABBBED484 /* Debug */,
+				E8CFCFE0356E69E19F3641966E75FBE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D239087F34B757BA5FFE77037F7044FE /* Build configuration list for PBXNativeTarget "Maya-Maya" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44559BF1AEBCB9642505C9EBA351578 /* Debug */,
+				9BDA89169BFE1387F4E822CBCFD879A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

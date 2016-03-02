@@ -1,0 +1,27 @@
+{
+  "name": "Maya",
+  "version": "0.1.0",
+  "summary": "A short description of Maya.",
+  "description": "",
+  "homepage": "https://github.com/ivanbruel/Maya",
+  "license": "MIT",
+  "authors": {
+    "Ivan Bruel": "ivan.bruel@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/ivanbruel/Maya.git",
+    "tag": "0.1.0"
+  },
+  "social_media_url": "https://twitter.com/ivanbruel",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "Maya": [
+      "Pod/Assets/*.png"
+    ]
+  },
+  "frameworks": "UIKit"
+}
