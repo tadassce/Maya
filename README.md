@@ -1,6 +1,6 @@
 # Maya
 
-![Maya](http://i.imgur.com/vcahHB1.png?1)
+![Maya](http://i.imgur.com/iYRseDS.png?1)
 
 [![CI Status](http://img.shields.io/travis/Ivan Bruel/Maya.svg?style=flat)](https://travis-ci.org/Ivan Bruel/Maya)
 [![Version](https://img.shields.io/cocoapods/v/Maya.svg?style=flat)](http://cocoapods.org/pods/Maya)
