@@ -27,6 +27,7 @@ class MayaCalendarMonthCollectionViewCell: UICollectionViewCell {
     didSet {
       for index in 0..<viewModel.weekdays.count {
         weekdayLabels[index].text = viewModel.weekdays[index]
+        weekdayLabels[index].textColor = viewModel.weekdayTextColor
       }
 
       for index in 0..<viewModel.viewModels.count {

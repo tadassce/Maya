@@ -14,6 +14,7 @@ class MayaMonthViewModel {
 
   let weekdays: [String]
   let weekdayFont: UIFont
+  let weekdayTextColor: UIColor
   let viewModels: [MayaDayViewModel]
   let dayClicked: ((MayaDate) -> Void)
 
@@ -23,6 +24,7 @@ class MayaMonthViewModel {
       dates = MayaMonthViewModel.datesForMonth(month)
       self.weekdayFont = weekdayFont
       self.weekdays = weekdays
+      self.weekdayTextColor = weekdayTextColor
       viewModels = dates.map { date in
         let dayTextColor = dataSource?.calendarTextColorForDate?(date) ?? UIColor.blackColor()
         let dayBackgroundColor = dataSource?.calendarBackgroundColorForDate?(date)
