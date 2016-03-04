@@ -49,6 +49,22 @@ public class MayaDate: NSObject {
     return MayaDate.calendar.dateFromComponents(components) ?? NSDate()
   }
 
+  public var isWeekend: Bool {
+    return weekday.isWeekend
+  }
+
+  public var previousDate: MayaDate {
+    return dateWithOffset(-1)
+  }
+
+  public var nextDate: MayaDate {
+    return dateWithOffset(1)
+  }
+
+  public func dateWithOffset(offset: Int) -> MayaDate {
+    return MayaDate(day: day+offset, month: month, year: year)
+  }
+
   override public func isEqual(object: AnyObject?) -> Bool {
     guard let rhs = object as? MayaDate else {
       return false

@@ -10,6 +10,7 @@
 		0EB6663640F654458538AF0EF53532EB /* Maya-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D281BBC5A7B330E4ED1FC6F80B7E98 /* Maya-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E313E4868D257D131D1DC4CE2782584 /* Pods-Maya_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D73B879149B899E66F9A3E03E1F6AA0 /* Pods-Maya_Example-dummy.m */; };
 		23E1BC9D5182B72C047C8E11B0A34143 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		3007F0D71C89A7A50095A1FA /* MayaButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3007F0D61C89A7A50095A1FA /* MayaButtonImage.swift */; };
 		313E478D9EA2C263CA6B626AB19263BD /* MayaMonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE48091E99917CC5C8D9EE595366AA0 /* MayaMonthViewModel.swift */; };
 		33335B87126A2EE3E22D77CDC76E592C /* MayaDayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8712F31395B8AB564E662CDDC20BA89 /* MayaDayViewModel.swift */; };
 		42643E4E5A5DB374E8D4C6EDB1F2E7DE /* MayaWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB916914C829D7AA439C330960A203C3 /* MayaWeekday.swift */; };
@@ -67,6 +68,7 @@
 		27634A8C881C69EAF85A7D290E1EC0F0 /* Pods-Maya_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Maya_Tests.modulemap"; sourceTree = "<group>"; };
 		2C5925BF9338258C2083CD7320EFD88C /* Maya.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Maya.xcconfig; sourceTree = "<group>"; };
 		2FE48091E99917CC5C8D9EE595366AA0 /* MayaMonthViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MayaMonthViewModel.swift; sourceTree = "<group>"; };
+		3007F0D61C89A7A50095A1FA /* MayaButtonImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MayaButtonImage.swift; sourceTree = "<group>"; };
 		34CA13A2EEFAFCED562774F2B256EDDF /* Pods-Maya_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Maya_Example-frameworks.sh"; sourceTree = "<group>"; };
 		3D73B879149B899E66F9A3E03E1F6AA0 /* Pods-Maya_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Maya_Example-dummy.m"; sourceTree = "<group>"; };
 		429B9753FC3E9748E5298E6CB11FB116 /* Maya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Maya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 				EABF71E34747A28F47D6AF32785ACA35 /* MayaMonth.swift */,
 				2FE48091E99917CC5C8D9EE595366AA0 /* MayaMonthViewModel.swift */,
 				BB916914C829D7AA439C330960A203C3 /* MayaWeekday.swift */,
+				3007F0D61C89A7A50095A1FA /* MayaButtonImage.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				4C1860B4E644D60169D4A99FFC148655 /* MayaMonth.swift in Sources */,
 				313E478D9EA2C263CA6B626AB19263BD /* MayaMonthViewModel.swift in Sources */,
 				42643E4E5A5DB374E8D4C6EDB1F2E7DE /* MayaWeekday.swift in Sources */,
+				3007F0D71C89A7A50095A1FA /* MayaButtonImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

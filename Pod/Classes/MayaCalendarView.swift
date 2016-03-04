@@ -52,6 +52,18 @@ public class MayaCalendarView: UIView {
     }
   }
 
+  @IBInspectable public var backButtonImage: UIImage? = MayaButtonImage.leftArrowImage {
+    didSet {
+      backButton.setImage(backButtonImage, forState: .Normal)
+    }
+  }
+
+  @IBInspectable public var forwardButtonImage: UIImage? = MayaButtonImage.rightArrowImage {
+    didSet {
+      forwardButton.setImage(forwardButtonImage, forState: .Normal)
+    }
+  }
+
   public var currentMonth: MayaMonth {
     get {
       return _currentMonth
@@ -123,9 +135,8 @@ extension MayaCalendarView {
   }
 
   private func setupButtons() {
-    backButton.setTitle("＜", forState: .Normal)
+    backButton.setImage(MayaButtonImage.leftArrowImage, forState: .Normal)
     backButton.tintColor = UIColor.blackColor()
-    backButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)
     backButton.addTarget(self, action: "backClick", forControlEvents: .TouchUpInside)
     backButton.translatesAutoresizingMaskIntoConstraints = false
     addSubview(backButton)
@@ -138,9 +149,8 @@ extension MayaCalendarView {
         options: [.AlignAllLeading], metrics: nil,
         views: ["backButton": backButton]))
 
-    forwardButton.setTitle("＞", forState: .Normal)
+    forwardButton.setImage(MayaButtonImage.rightArrowImage, forState: .Normal)
     forwardButton.tintColor = UIColor.blackColor()
-    forwardButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)
     forwardButton.addTarget(self, action: "forwardClick", forControlEvents: .TouchUpInside)
     forwardButton.translatesAutoresizingMaskIntoConstraints = false
     addSubview(forwardButton)

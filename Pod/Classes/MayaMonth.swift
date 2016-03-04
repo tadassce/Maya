@@ -20,6 +20,10 @@ public class MayaMonth: NSObject {
     self.year = year
   }
 
+  convenience public init(mayaDate: MayaDate) {
+    self.init(date: mayaDate.date)
+  }
+
   convenience public init(date: NSDate) {
     let components = MayaMonth.calendar.components([.Month , .Year], fromDate: date)
 

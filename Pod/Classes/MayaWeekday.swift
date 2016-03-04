@@ -16,4 +16,13 @@ import Foundation
   case Thursday = 5
   case Friday = 6
   case Saturday = 7
+
+  var isWeekend: Bool {
+    switch self {
+    case .Sunday, .Saturday:
+      return true
+    default:
+      return false
+    }
+  }
 }
