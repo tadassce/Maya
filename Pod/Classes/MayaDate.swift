@@ -78,8 +78,8 @@ public class MayaDate: NSObject {
   }
 
   public func between(firstDate: MayaDate, lastDate: MayaDate) -> Bool {
-    return date.compare(firstDate) == .OrderedDescending
-      && date.compare(lastDate) == .OrderedAscending
+    return compare(firstDate) == .OrderedDescending
+      && compare(lastDate) == .OrderedAscending
   }
 
   public static var today: MayaDate {
