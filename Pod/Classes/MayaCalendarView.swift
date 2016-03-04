@@ -16,7 +16,11 @@ public class MayaCalendarView: UIView {
   private var collectionView: UICollectionView
   private var collectionViewFlowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 
-  public var dataSource: MayaCalendarDataSource?
+  public var dataSource: MayaCalendarDataSource? {
+    didSet {
+      reloadData()
+    }
+  }
   public var delegate:  MayaCalendarDelegate?
 
   @IBOutlet public var ibDataSource: AnyObject? {
