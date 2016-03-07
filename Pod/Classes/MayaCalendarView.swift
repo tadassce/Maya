@@ -214,6 +214,7 @@ extension MayaCalendarView {
   }
 
   public func reloadData() {
+    monthLabel.text = dataSource?.calendarMonthName?(currentMonth) ?? currentMonth.name
     collectionView.reloadData()
   }
 
