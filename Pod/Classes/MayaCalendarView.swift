@@ -199,7 +199,7 @@ extension MayaCalendarView {
     collectionView.dataSource = self
     collectionView.backgroundColor = UIColor.clearColor()
     collectionView.registerNib(UINib(nibName: "MayaCalendarMonthCollectionViewCell",
-      bundle: NSBundle(forClass: self.dynamicType)),
+      bundle: NSBundle(forClass: MayaCalendarView.self)),
       forCellWithReuseIdentifier: "MayaCalendarMonthCollectionViewCell")
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     addSubview(collectionView)
