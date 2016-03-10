@@ -113,6 +113,12 @@ public class MayaCalendarView: UIView {
     }
   }
 
+  override public var frame: CGRect {
+    didSet {
+      collectionViewFlowLayout.invalidateLayout()
+    }
+  }
+
   override public init(frame: CGRect) {
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
     super.init(frame: frame)
@@ -126,7 +132,7 @@ public class MayaCalendarView: UIView {
   }
 
   override public func layoutSubviews() {
-    collectionView.layoutIfNeeded()
+    collectionViewFlowLayout.invalidateLayout()
     collectionView.reloadData()
     scrollToMonth(_currentMonth)
   }
@@ -275,7 +281,7 @@ UICollectionViewDelegateFlowLayout {
   public func collectionView(collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-      return collectionView.bounds.size
+      return CGSize(width: bounds.size.width, height: bounds.size.height - 44)
   }
 
   public func scrollViewDidScroll(scrollView: UIScrollView) {
