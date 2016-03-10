@@ -61,8 +61,12 @@ public class MayaMonth: NSObject {
 
   public var weeks: [[MayaDate]] {
     var weeks = [[MayaDate]]()
-    for index in 1...numberOfWeeks {
-      weeks.append(dates.filter { $0.weekOfMonth == index })
+    for index in 0...numberOfWeeks {
+      let days = dates.filter { $0.weekOfMonth == index &&
+        MayaMonth(mayaDate: $0).compare(self) == .OrderedSame }
+      if days.count > 0 {
+        weeks.append(days)
+      }
     }
     return weeks
   }
@@ -72,7 +76,7 @@ public class MayaMonth: NSObject {
   }
 
   public var lastWeek: [MayaDate] {
-    return weeks[numberOfWeeks-1]
+    return weeks[weeks.count-1]
   }
 
   public var dates: [MayaDate] {
@@ -113,5 +117,5 @@ public class MayaMonth: NSObject {
   public func compare(otherMonth: MayaMonth) -> NSComparisonResult {
     return date.compare(otherMonth.date)
   }
-
+  
 }

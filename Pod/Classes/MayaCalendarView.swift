@@ -85,7 +85,11 @@ public class MayaCalendarView: UIView {
       } else if currentMonth.compare(lastMonth) == .OrderedDescending {
         lastMonth = currentMonth
       }
-      monthLabel.text = dataSource?.calendarMonthName?(currentMonth) ?? currentMonth.name
+      UIView.transitionWithView(monthLabel, duration: 0.25, options: .TransitionCrossDissolve,
+        animations: { () -> Void in
+          self.monthLabel.text = self.dataSource?.calendarMonthName?(self.currentMonth) ??
+            self.currentMonth.name
+        }, completion: nil)
       backButton.enabled = currentMonth.numberOfMonthsUntil(firstMonth) != 0
       forwardButton.enabled = currentMonth.numberOfMonthsUntil(lastMonth) != 0
     }
@@ -250,9 +254,9 @@ UICollectionViewDelegateFlowLayout {
 
   public func collectionView(collectionView: UICollectionView,
     cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView
-      .dequeueReusableCellWithReuseIdentifier("MayaCalendarMonthCollectionViewCell",
-        forIndexPath: indexPath)
+      let cell = collectionView
+        .dequeueReusableCellWithReuseIdentifier("MayaCalendarMonthCollectionViewCell",
+          forIndexPath: indexPath)
       if let cell = cell as? MayaCalendarMonthCollectionViewCell {
         let month = monthForIndexPath(indexPath)
         cell.viewModel = MayaMonthViewModel(month: month, weekdays: weekdays,
@@ -265,13 +269,13 @@ UICollectionViewDelegateFlowLayout {
 
   public func collectionView(collectionView: UICollectionView,
     numberOfItemsInSection section: Int) -> Int {
-    return firstMonth.numberOfMonthsUntil(lastMonth) + 1
+      return firstMonth.numberOfMonthsUntil(lastMonth) + 1
   }
 
   public func collectionView(collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    return collectionView.bounds.size
+      return collectionView.bounds.size
   }
 
   public func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -306,5 +310,5 @@ extension MayaCalendarView {
     let currentPage = self.collectionView.contentOffset.x / self.collectionView.frame.size.width
     return Int(round(currentPage))
   }
-
+  
 }
