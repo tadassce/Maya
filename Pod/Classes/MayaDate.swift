@@ -86,4 +86,8 @@ public class MayaDate: NSObject {
     return MayaDate(date: NSDate())
   }
 
+  public override var hash: Int {
+    return Int(round(date.timeIntervalSince1970))
+  }
+
 }
