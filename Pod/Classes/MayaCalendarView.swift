@@ -173,7 +173,6 @@ extension MayaCalendarView {
 
     backButton.enabled = currentMonth.numberOfMonthsUntil(firstMonth) != 0
     forwardButton.enabled = currentMonth.numberOfMonthsUntil(lastMonth) != 0
-    setupButtonConstraints()
   }
 
   private func setupButtonConstraints() {
@@ -196,7 +195,13 @@ extension MayaCalendarView {
       .constraintsWithVisualFormat("V:|-0-[forwardButton(\(headerHeight))]",
         options: [.AlignAllLeading], metrics: nil,
         views: ["forwardButton": forwardButton]))
-
+    addConstraints(NSLayoutConstraint
+      .constraintsWithVisualFormat("H:[backButton]-8-[monthLabel]-8-[forwardButton]",
+        options: NSLayoutFormatOptions(rawValue: 0), metrics: nil,
+        views: ["monthLabel": monthLabel, "forwardButton": forwardButton,
+          "backButton": backButton]))
+    addConstraint(NSLayoutConstraint(item: monthLabel, attribute: .CenterY, relatedBy: .Equal,
+      toItem: backButton, attribute: .CenterY, multiplier: 1, constant: 0))
   }
 
   private func setupMonthLabel() {
@@ -205,13 +210,9 @@ extension MayaCalendarView {
     monthLabel.text = dataSource?.calendarMonthName?(currentMonth) ?? currentMonth.name
     monthLabel.translatesAutoresizingMaskIntoConstraints = false
     addSubview(monthLabel)
-    addConstraints(NSLayoutConstraint
-      .constraintsWithVisualFormat("H:[backButton]-8-[monthLabel]-8-[forwardButton]",
-        options: NSLayoutFormatOptions(rawValue: 0), metrics: nil,
-        views: ["monthLabel": monthLabel, "forwardButton": forwardButton,
-          "backButton": backButton]))
-    addConstraint(NSLayoutConstraint(item: monthLabel, attribute: .CenterY, relatedBy: .Equal,
-      toItem: backButton, attribute: .CenterY, multiplier: 1, constant: 0))
+
+    setupButtonConstraints()
+
   }
 
 
@@ -335,7 +336,7 @@ extension MayaCalendarView {
     let currentPage = self.collectionView.contentOffset.x / self.collectionView.frame.size.width
     return Int(round(currentPage))
   }
-  
+
   private func removeConstraints(view: UIView) {
     var list = [NSLayoutConstraint]()
     if let superview = view.superview {
