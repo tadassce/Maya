@@ -288,6 +288,7 @@ UICollectionViewDelegateFlowLayout {
     let month = monthForIndexPath(NSIndexPath(forItem: currentPage(), inSection: 0))
     if month != _currentMonth {
       _currentMonth = month
+      delegate?.calendarDidChangeMonth?(_currentMonth)
     }
   }
 
