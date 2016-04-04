@@ -92,9 +92,9 @@ public class MayaCalendarView: UIView {
         lastMonth = currentMonth
       }
       UIView.transitionWithView(monthLabel, duration: 0.25, options: .TransitionCrossDissolve,
-        animations: { () -> Void in
-          self.monthLabel.text = self.dataSource?.calendarMonthName?(self.currentMonth) ??
-            self.currentMonth.name
+                                animations: { () -> Void in
+                                  self.monthLabel.text = self.dataSource?.calendarMonthName?(self.currentMonth) ??
+                                    self.currentMonth.name
         }, completion: nil)
       backButton.enabled = currentMonth.numberOfMonthsUntil(firstMonth) != 0
       forwardButton.enabled = currentMonth.numberOfMonthsUntil(lastMonth) != 0
@@ -228,7 +228,7 @@ extension MayaCalendarView {
     collectionView.backgroundColor = UIColor.clearColor()
     collectionView.registerNib(UINib(nibName: "MayaCalendarMonthCollectionViewCell",
       bundle: NSBundle(forClass: MayaCalendarView.self)),
-      forCellWithReuseIdentifier: "MayaCalendarMonthCollectionViewCell")
+                               forCellWithReuseIdentifier: "MayaCalendarMonthCollectionViewCell")
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     addSubview(collectionView)
     addConstraints(NSLayoutConstraint
@@ -266,7 +266,7 @@ extension MayaCalendarView {
     }
     let indexPath = NSIndexPath(forItem: index, inSection: 0)
     collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally,
-      animated: true)
+                                           animated: true)
   }
 
 
@@ -277,29 +277,29 @@ extension MayaCalendarView: UICollectionViewDataSource, UICollectionViewDelegate
 UICollectionViewDelegateFlowLayout {
 
   public func collectionView(collectionView: UICollectionView,
-    cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-      let cell = collectionView
-        .dequeueReusableCellWithReuseIdentifier("MayaCalendarMonthCollectionViewCell",
-          forIndexPath: indexPath)
-      if let cell = cell as? MayaCalendarMonthCollectionViewCell {
-        let month = monthForIndexPath(indexPath)
-        cell.viewModel = MayaMonthViewModel(month: month, weekdays: weekdays,
-          weekdayTextColor: weekdayTextColor, weekdayFont: weekdayFont, dayFont: dayFont,
-          dataSource: dataSource, dayClicked: dayClicked)
-      }
+                             cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    let cell = collectionView
+      .dequeueReusableCellWithReuseIdentifier("MayaCalendarMonthCollectionViewCell",
+                                              forIndexPath: indexPath)
+    if let cell = cell as? MayaCalendarMonthCollectionViewCell {
+      let month = monthForIndexPath(indexPath)
+      cell.viewModel = MayaMonthViewModel(month: month, weekdays: weekdays,
+                                          weekdayTextColor: weekdayTextColor, weekdayFont: weekdayFont, dayFont: dayFont,
+                                          dataSource: dataSource, dayClicked: dayClicked)
+    }
 
-      return cell
+    return cell
   }
 
   public func collectionView(collectionView: UICollectionView,
-    numberOfItemsInSection section: Int) -> Int {
-      return firstMonth.numberOfMonthsUntil(lastMonth) + 1
+                             numberOfItemsInSection section: Int) -> Int {
+    return firstMonth.numberOfMonthsUntil(lastMonth) + 1
   }
 
   public func collectionView(collectionView: UICollectionView,
-    layout collectionViewLayout: UICollectionViewLayout,
-    sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-      return CGSize(width: bounds.size.width, height: bounds.size.height - 44)
+                             layout collectionViewLayout: UICollectionViewLayout,
+                                    sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    return CGSize(width: bounds.size.width, height: bounds.size.height - 44)
   }
 
   public func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -335,17 +335,18 @@ extension MayaCalendarView {
     let currentPage = self.collectionView.contentOffset.x / self.collectionView.frame.size.width
     return Int(round(currentPage))
   }
-
+  
   private func removeConstraints(view: UIView) {
     var list = [NSLayoutConstraint]()
     if let superview = view.superview {
-    for constraint in superview.constraints {
-      if constraint.firstItem as? UIView == view || constraint.secondItem as? UIView == view {
-        list.append(constraint)
+      for constraint in superview.constraints {
+        if constraint.firstItem as? UIView == view || constraint.secondItem as? UIView == view {
+          list.append(constraint)
+        }
       }
+      view.superview?.removeConstraints(list)
+      view.removeConstraints(view.constraints)
     }
-    view.superview?.removeConstraints(list)
-    view.removeConstraints(view.constraints)
   }
-
+  
 }
