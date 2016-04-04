@@ -29,6 +29,7 @@ class MayaMonthViewModel {
         let dayTextColor = dataSource?.calendarTextColorForDate?(date) ?? UIColor.blackColor()
         let dayBackgroundColor = dataSource?.calendarBackgroundColorForDate?(date)
           ?? UIColor.clearColor()
+        let dayFont = dataSource?.calendarFontForDate?(date) ?? dayFont
         let otherMonth = date.month != month.month
         let textColor = otherMonth ? dayTextColor.colorWithAlphaComponent(0.5) : dayTextColor
         let backgroundColor = otherMonth && UIColor.clearColor() != dayBackgroundColor ?
