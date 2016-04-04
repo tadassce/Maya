@@ -81,7 +81,7 @@ public class MayaMonth: NSObject {
 
   public var dates: [MayaDate] {
     var dates = [MayaDate]()
-    for var index = 1; index <= numberOfDays; index++ {
+    for index in 1...numberOfDays {
       dates.append(MayaDate(day: index, month: month, year: year))
     }
     return dates

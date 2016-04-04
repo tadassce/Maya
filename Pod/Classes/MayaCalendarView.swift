@@ -151,7 +151,8 @@ extension MayaCalendarView {
   private func setupButtons() {
     backButton.setImage(MayaButtonImage.leftArrowImage, forState: .Normal)
     backButton.tintColor = UIColor.blackColor()
-    backButton.addTarget(self, action: "backClick", forControlEvents: .TouchUpInside)
+    backButton.addTarget(self, action: #selector(MayaCalendarView.backClick),
+                         forControlEvents: .TouchUpInside)
     backButton.translatesAutoresizingMaskIntoConstraints = false
     addSubview(backButton)
     addConstraints(NSLayoutConstraint
@@ -165,7 +166,8 @@ extension MayaCalendarView {
 
     forwardButton.setImage(MayaButtonImage.rightArrowImage, forState: .Normal)
     forwardButton.tintColor = UIColor.blackColor()
-    forwardButton.addTarget(self, action: "forwardClick", forControlEvents: .TouchUpInside)
+    forwardButton.addTarget(self, action: #selector(MayaCalendarView.forwardClick),
+                            forControlEvents: .TouchUpInside)
     forwardButton.translatesAutoresizingMaskIntoConstraints = false
     addSubview(forwardButton)
     addConstraints(NSLayoutConstraint
