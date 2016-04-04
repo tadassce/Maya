@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Maya"
-  s.version          = "1.1.8"
+  s.version          = "1.1.9"
   s.summary          = "Maya is a customizable calendar library with an out of the box MayaCalendarView"
 
 # This description is used to generate tags and improve search results.
