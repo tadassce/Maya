@@ -68,6 +68,12 @@ public class MayaCalendarView: UIView {
     }
   }
 
+  @IBInspectable public var headerHeight: CGFloat = 44 {
+    didSet {
+      setupButtonConstraints()
+    }
+  }
+
   public var currentMonth: MayaMonth {
     get {
       return _currentMonth
@@ -155,14 +161,7 @@ extension MayaCalendarView {
                          forControlEvents: .TouchUpInside)
     backButton.translatesAutoresizingMaskIntoConstraints = false
     addSubview(backButton)
-    addConstraints(NSLayoutConstraint
-      .constraintsWithVisualFormat("H:|-0-[backButton(44)]",
-        options: [.AlignAllLeading], metrics: nil,
-        views: ["backButton": backButton]))
-    addConstraints(NSLayoutConstraint
-      .constraintsWithVisualFormat("V:|-0-[backButton(44)]",
-        options: [.AlignAllLeading], metrics: nil,
-        views: ["backButton": backButton]))
+
 
     forwardButton.setImage(MayaButtonImage.rightArrowImage, forState: .Normal)
     forwardButton.tintColor = UIColor.blackColor()
@@ -170,17 +169,34 @@ extension MayaCalendarView {
                             forControlEvents: .TouchUpInside)
     forwardButton.translatesAutoresizingMaskIntoConstraints = false
     addSubview(forwardButton)
+
+
+    backButton.enabled = currentMonth.numberOfMonthsUntil(firstMonth) != 0
+    forwardButton.enabled = currentMonth.numberOfMonthsUntil(lastMonth) != 0
+    setupButtonConstraints()
+  }
+
+  private func setupButtonConstraints() {
+    removeConstraints(backButton)
+    removeConstraints(forwardButton)
+    addConstraints(NSLayoutConstraint
+      .constraintsWithVisualFormat("H:|-0-[backButton(44)]",
+        options: [.AlignAllLeading], metrics: nil,
+        views: ["backButton": backButton]))
+    addConstraints(NSLayoutConstraint
+      .constraintsWithVisualFormat("V:|-0-[backButton(\(headerHeight))]",
+        options: [.AlignAllLeading], metrics: nil,
+        views: ["backButton": backButton]))
+
     addConstraints(NSLayoutConstraint
       .constraintsWithVisualFormat("H:[forwardButton(44)]-0-|",
         options: [.AlignAllLeading], metrics: nil,
         views: ["forwardButton": forwardButton]))
     addConstraints(NSLayoutConstraint
-      .constraintsWithVisualFormat("V:|-0-[forwardButton(44)]",
+      .constraintsWithVisualFormat("V:|-0-[forwardButton(\(headerHeight))]",
         options: [.AlignAllLeading], metrics: nil,
         views: ["forwardButton": forwardButton]))
 
-    backButton.enabled = currentMonth.numberOfMonthsUntil(firstMonth) != 0
-    forwardButton.enabled = currentMonth.numberOfMonthsUntil(lastMonth) != 0
   }
 
   private func setupMonthLabel() {
@@ -319,5 +335,17 @@ extension MayaCalendarView {
     let currentPage = self.collectionView.contentOffset.x / self.collectionView.frame.size.width
     return Int(round(currentPage))
   }
-  
+
+  private func removeConstraints(view: UIView) {
+    var list = [NSLayoutConstraint]()
+    if let superview = view.superview {
+    for constraint in superview.constraints {
+      if constraint.firstItem as? UIView == view || constraint.secondItem as? UIView == view {
+        list.append(constraint)
+      }
+    }
+    view.superview?.removeConstraints(list)
+    view.removeConstraints(view.constraints)
+  }
+
 }
