@@ -10,6 +10,7 @@ import UIKit
 
 @objc public protocol MayaCalendarDataSource {
 
+  optional func calenderDateString(date: MayaDate) -> String?
   optional func calendarMonthName(month: MayaMonth) -> String?
   optional func calendarTextColorForDate(date: MayaDate) -> UIColor?
   optional func calendarBackgroundColorForDate(date: MayaDate) -> UIColor?

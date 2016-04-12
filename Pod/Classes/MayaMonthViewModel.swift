@@ -19,24 +19,24 @@ class MayaMonthViewModel {
   let dayClicked: ((MayaDate) -> Void)
 
   init(month: MayaMonth, weekdays: [String], weekdayTextColor: UIColor, weekdayFont: UIFont,
-    dayFont: UIFont, dataSource: MayaCalendarDataSource?, dayClicked: (MayaDate) -> Void) {
-      self.dayClicked = dayClicked
-      dates = MayaMonthViewModel.datesForMonth(month)
-      self.weekdayFont = weekdayFont
-      self.weekdays = weekdays
-      self.weekdayTextColor = weekdayTextColor
-      viewModels = dates.map { date in
-        let dayTextColor = dataSource?.calendarTextColorForDate?(date) ?? UIColor.blackColor()
-        let dayBackgroundColor = dataSource?.calendarBackgroundColorForDate?(date)
-          ?? UIColor.clearColor()
-        let dayFont = dataSource?.calendarFontForDate?(date) ?? dayFont
-        let otherMonth = date.month != month.month
-        let textColor = otherMonth ? dayTextColor.colorWithAlphaComponent(0.5) : dayTextColor
-        let backgroundColor = otherMonth && UIColor.clearColor() != dayBackgroundColor ?
-          dayBackgroundColor.colorWithAlphaComponent(0.5) : dayBackgroundColor
-        return MayaDayViewModel(date: date, font: dayFont,
-        textColor: textColor, backgroundColor: backgroundColor)
-      }
+       dayFont: UIFont, dataSource: MayaCalendarDataSource?, dayClicked: (MayaDate) -> Void) {
+    self.dayClicked = dayClicked
+    dates = MayaMonthViewModel.datesForMonth(month)
+    self.weekdayFont = weekdayFont
+    self.weekdays = weekdays
+    self.weekdayTextColor = weekdayTextColor
+    viewModels = dates.map { date in
+      let dayTextColor = dataSource?.calendarTextColorForDate?(date) ?? UIColor.blackColor()
+      let dayBackgroundColor = dataSource?.calendarBackgroundColorForDate?(date)
+        ?? UIColor.clearColor()
+      let dayFont = dataSource?.calendarFontForDate?(date) ?? dayFont
+      let otherMonth = date.month != month.month
+      let textColor = otherMonth ? dayTextColor.colorWithAlphaComponent(0.5) : dayTextColor
+      let backgroundColor = otherMonth && UIColor.clearColor() != dayBackgroundColor ?
+        dayBackgroundColor.colorWithAlphaComponent(0.5) : dayBackgroundColor
+      return MayaDayViewModel(date: date, dateText: dataSource?.calenderDateString?(date),
+        font: dayFont, textColor: textColor, backgroundColor: backgroundColor)
+    }
   }
 
   func viewModelClicked(index: Int) {

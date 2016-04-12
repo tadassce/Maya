@@ -17,10 +17,10 @@ class MayaDayViewModel {
   let textColor: UIColor
   let backgroundColor: UIColor
 
-  init(date: MayaDate, font: UIFont, textColor: UIColor, backgroundColor: UIColor) {
+  init(date: MayaDate, dateText: String? = nil, font: UIFont, textColor: UIColor, backgroundColor: UIColor) {
     self.date = date
     self.font = font
-    day = "\(date.day)"
+    day = dateText ?? "\(date.day)"
     self.textColor = textColor
     self.backgroundColor = backgroundColor
   }
