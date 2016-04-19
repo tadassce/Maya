@@ -43,9 +43,9 @@ public class MayaDate: NSObject {
 
   public lazy var date: NSDate = {
     let components = NSDateComponents()
-    components.day = day
-    components.month = month
-    components.year = year
+    components.day = self.day
+    components.month = self.month
+    components.year = self.year
     return MayaDate.calendar.dateFromComponents(components) ?? NSDate()
   }()
 
