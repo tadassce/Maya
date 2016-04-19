@@ -41,13 +41,13 @@ public class MayaDate: NSObject {
     return MayaDate.calendar.components([.WeekOfYear], fromDate: date).weekOfYear
   }
 
-  public var date: NSDate {
+  public lazy var date: NSDate = {
     let components = NSDateComponents()
     components.day = day
     components.month = month
     components.year = year
     return MayaDate.calendar.dateFromComponents(components) ?? NSDate()
-  }
+  }()
 
   public var isWeekend: Bool {
     return weekday.isWeekend
