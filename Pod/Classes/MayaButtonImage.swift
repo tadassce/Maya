@@ -33,7 +33,7 @@ class MayaButtonImage {
     let image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
 
-    return image
+    return image!
   }
 
   static var leftArrowImage: UIImage {
@@ -57,7 +57,7 @@ class MayaButtonImage {
     let image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     
-    return image
+    return image!
   }
 
 }

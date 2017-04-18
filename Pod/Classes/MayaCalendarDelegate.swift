@@ -10,7 +10,7 @@ import UIKit
 
 @objc public protocol MayaCalendarDelegate {
 
-  optional func calendarDidSelectDate(_ date: MayaDate)
-  optional func calendarDidChangeMonth(_ month: MayaMonth)
+  @objc optional func calendarDidSelectDate(_ date: MayaDate)
+  @objc optional func calendarDidChangeMonth(_ month: MayaMonth)
   
 }

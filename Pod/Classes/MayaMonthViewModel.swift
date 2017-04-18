@@ -19,7 +19,7 @@ class MayaMonthViewModel {
   let dayClicked: ((MayaDate) -> Void)
 
   init(month: MayaMonth, weekdays: [String], weekdayTextColor: UIColor, weekdayFont: UIFont,
-       dayFont: UIFont, dataSource: MayaCalendarDataSource?, dayClicked: (MayaDate) -> Void) {
+       dayFont: UIFont, dataSource: MayaCalendarDataSource?, dayClicked: @escaping (MayaDate) -> Void) {
     self.dayClicked = dayClicked
     dates = MayaMonthViewModel.datesForMonth(month)
     self.weekdayFont = weekdayFont

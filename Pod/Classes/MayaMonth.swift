@@ -27,11 +27,11 @@ open class MayaMonth: NSObject {
   convenience public init(date: Date) {
     let components = (MayaMonth.calendar as NSCalendar).components([.month , .year], from: date)
 
-    self.init(month: components.month, year: components.year)
+    self.init(month: components.month!, year: components.year!)
   }
 
   open var date: Date {
-    let components = DateComponents()
+    var components = DateComponents()
     components.month = month
     components.year = year
     return MayaMonth.calendar.date(from: components) ?? Date()
@@ -48,7 +48,7 @@ open class MayaMonth: NSObject {
   }
 
   open var numberOfWeeks: Int {
-    return (MayaMonth.calendar as NSCalendar).components(.weekOfMonth, from: lastDate.date).weekOfMonth
+    return (MayaMonth.calendar as NSCalendar).components(.weekOfMonth, from: lastDate.date).weekOfMonth!
   }
 
   open var firstDate: MayaDate {
@@ -103,7 +103,7 @@ open class MayaMonth: NSObject {
     let components = (MayaMonth.calendar as NSCalendar).components(.month, from: date, to: month.date,
       options: [])
 
-    return components.month
+    return components.month!
   }
 
   override open func isEqual(_ object: Any?) -> Bool {

@@ -25,24 +25,24 @@ open class MayaDate: NSObject {
   convenience public init(date: Date) {
     let components = (MayaDate.calendar as NSCalendar).components([.day , .month , .year], from: date)
 
-    self.init(day: components.day, month: components.month, year: components.year)
+    self.init(day: components.day!, month: components.month!, year: components.year!)
   }
 
   open var weekday: MayaWeekday {
-    return MayaWeekday(rawValue: (MayaDate.calendar as NSCalendar).components([.weekday], from: date).weekday)
+    return MayaWeekday(rawValue: (MayaDate.calendar as NSCalendar).components([.weekday], from: date).weekday!)
       ?? .sunday
   }
 
   open var weekOfMonth: Int {
-    return (MayaDate.calendar as NSCalendar).components([.weekOfMonth], from: date).weekOfMonth
+    return (MayaDate.calendar as NSCalendar).components([.weekOfMonth], from: date).weekOfMonth!
   }
 
   open var weekOfYear: Int {
-    return (MayaDate.calendar as NSCalendar).components([.weekOfYear], from: date).weekOfYear
+    return (MayaDate.calendar as NSCalendar).components([.weekOfYear], from: date).weekOfYear!
   }
 
   open lazy var date: Date = {
-    let components = DateComponents()
+    var components = DateComponents()
     components.day = self.day
     components.month = self.month
     components.year = self.year
