@@ -10,7 +10,7 @@ import Foundation
 
 class MayaMonthViewModel {
 
-  private let dates: [MayaDate]
+  fileprivate let dates: [MayaDate]
 
   let weekdays: [String]
   let weekdayFont: UIFont
@@ -26,27 +26,27 @@ class MayaMonthViewModel {
     self.weekdays = weekdays
     self.weekdayTextColor = weekdayTextColor
     viewModels = dates.map { date in
-      let dayTextColor = dataSource?.calendarTextColorForDate?(date) ?? UIColor.blackColor()
+      let dayTextColor = dataSource?.calendarTextColorForDate?(date) ?? UIColor.black
       let dayBackgroundColor = dataSource?.calendarBackgroundColorForDate?(date)
-        ?? UIColor.clearColor()
+        ?? UIColor.clear
       let dayFont = dataSource?.calendarFontForDate?(date) ?? dayFont
       let otherMonth = date.month != month.month
-      let textColor = otherMonth ? dayTextColor.colorWithAlphaComponent(0.5) : dayTextColor
-      let backgroundColor = otherMonth && UIColor.clearColor() != dayBackgroundColor ?
-        dayBackgroundColor.colorWithAlphaComponent(0.5) : dayBackgroundColor
+      let textColor = otherMonth ? dayTextColor.withAlphaComponent(0.5) : dayTextColor
+      let backgroundColor = otherMonth && UIColor.clear != dayBackgroundColor ?
+        dayBackgroundColor.withAlphaComponent(0.5) : dayBackgroundColor
       return MayaDayViewModel(date: date, dateText: dataSource?.calenderDateString?(date),
         font: dayFont, textColor: textColor, backgroundColor: backgroundColor)
     }
   }
 
-  func viewModelClicked(index: Int) {
+  func viewModelClicked(_ index: Int) {
     dayClicked(dates[index])
   }
 }
 
 extension MayaMonthViewModel {
 
-  private static func datesForMonth(month: MayaMonth) -> [MayaDate] {
+  fileprivate static func datesForMonth(_ month: MayaMonth) -> [MayaDate] {
     let previousMonth = month.previousMonth
     let nextMonth = month.nextMonth
 

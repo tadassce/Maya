@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class MayaDate: NSObject {
+open class MayaDate: NSObject {
 
-  private static let calendar = NSCalendar.currentCalendar()
+  fileprivate static let calendar = Calendar.current
 
-  public let day: Int
-  public let month: Int
-  public let year: Int
+  open let day: Int
+  open let month: Int
+  open let year: Int
 
   public init(day: Int, month: Int, year: Int) {
     self.day = day
@@ -22,71 +22,71 @@ public class MayaDate: NSObject {
     self.year = year
   }
 
-  convenience public init(date: NSDate) {
-    let components = MayaDate.calendar.components([.Day , .Month , .Year], fromDate: date)
+  convenience public init(date: Date) {
+    let components = (MayaDate.calendar as NSCalendar).components([.day , .month , .year], from: date)
 
     self.init(day: components.day, month: components.month, year: components.year)
   }
 
-  public var weekday: MayaWeekday {
-    return MayaWeekday(rawValue: MayaDate.calendar.components([.Weekday], fromDate: date).weekday)
-      ?? .Sunday
+  open var weekday: MayaWeekday {
+    return MayaWeekday(rawValue: (MayaDate.calendar as NSCalendar).components([.weekday], from: date).weekday)
+      ?? .sunday
   }
 
-  public var weekOfMonth: Int {
-    return MayaDate.calendar.components([.WeekOfMonth], fromDate: date).weekOfMonth
+  open var weekOfMonth: Int {
+    return (MayaDate.calendar as NSCalendar).components([.weekOfMonth], from: date).weekOfMonth
   }
 
-  public var weekOfYear: Int {
-    return MayaDate.calendar.components([.WeekOfYear], fromDate: date).weekOfYear
+  open var weekOfYear: Int {
+    return (MayaDate.calendar as NSCalendar).components([.weekOfYear], from: date).weekOfYear
   }
 
-  public lazy var date: NSDate = {
-    let components = NSDateComponents()
+  open lazy var date: Date = {
+    let components = DateComponents()
     components.day = self.day
     components.month = self.month
     components.year = self.year
-    return MayaDate.calendar.dateFromComponents(components) ?? NSDate()
+    return MayaDate.calendar.date(from: components) ?? Date()
   }()
 
-  public var isWeekend: Bool {
+  open var isWeekend: Bool {
     return weekday.isWeekend
   }
 
-  public var previousDate: MayaDate {
+  open var previousDate: MayaDate {
     return dateWithOffset(-1)
   }
 
-  public var nextDate: MayaDate {
+  open var nextDate: MayaDate {
     return dateWithOffset(1)
   }
 
-  public func dateWithOffset(offset: Int) -> MayaDate {
+  open func dateWithOffset(_ offset: Int) -> MayaDate {
     return MayaDate(day: day+offset, month: month, year: year)
   }
 
-  override public func isEqual(object: AnyObject?) -> Bool {
+  override open func isEqual(_ object: Any?) -> Bool {
     guard let rhs = object as? MayaDate else {
       return false
     }
 
-    return date.compare(rhs.date) == .OrderedSame
+    return date.compare(rhs.date) == .orderedSame
   }
 
-  public func compare(otherDate: MayaDate) -> NSComparisonResult {
+  open func compare(_ otherDate: MayaDate) -> ComparisonResult {
     return date.compare(otherDate.date)
   }
 
-  public func between(firstDate: MayaDate, lastDate: MayaDate) -> Bool {
-    return compare(firstDate) == .OrderedDescending
-      && compare(lastDate) == .OrderedAscending
+  open func between(_ firstDate: MayaDate, lastDate: MayaDate) -> Bool {
+    return compare(firstDate) == .orderedDescending
+      && compare(lastDate) == .orderedAscending
   }
 
-  public static var today: MayaDate {
-    return MayaDate(date: NSDate())
+  open static var today: MayaDate {
+    return MayaDate(date: Date())
   }
 
-  public override var hash: Int {
+  open override var hash: Int {
     return Int(round(date.timeIntervalSince1970))
   }
 

@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class MayaMonth: NSObject {
+open class MayaMonth: NSObject {
 
-  private static let calendar = NSCalendar.currentCalendar()
+  fileprivate static let calendar = Calendar.current
 
-  public let month: Int
-  public let year: Int
+  open let month: Int
+  open let year: Int
 
   public init(month: Int, year: Int) {
     self.month = month
@@ -24,46 +24,46 @@ public class MayaMonth: NSObject {
     self.init(date: mayaDate.date)
   }
 
-  convenience public init(date: NSDate) {
-    let components = MayaMonth.calendar.components([.Month , .Year], fromDate: date)
+  convenience public init(date: Date) {
+    let components = (MayaMonth.calendar as NSCalendar).components([.month , .year], from: date)
 
     self.init(month: components.month, year: components.year)
   }
 
-  public var date: NSDate {
-    let components = NSDateComponents()
+  open var date: Date {
+    let components = DateComponents()
     components.month = month
     components.year = year
-    return MayaMonth.calendar.dateFromComponents(components) ?? NSDate()
+    return MayaMonth.calendar.date(from: components) ?? Date()
   }
 
-  public var name: String {
-    let dateFormatter = NSDateFormatter()
+  open var name: String {
+    let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "MMMM"
-    return dateFormatter.stringFromDate(date)
+    return dateFormatter.string(from: date)
   }
 
-  public var numberOfDays: Int {
-    return MayaMonth.calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: date).length
+  open var numberOfDays: Int {
+    return (MayaMonth.calendar as NSCalendar).range(of: .day, in: .month, for: date).length
   }
 
-  public var numberOfWeeks: Int {
-    return MayaMonth.calendar.components(.WeekOfMonth, fromDate: lastDate.date).weekOfMonth
+  open var numberOfWeeks: Int {
+    return (MayaMonth.calendar as NSCalendar).components(.weekOfMonth, from: lastDate.date).weekOfMonth
   }
 
-  public var firstDate: MayaDate {
+  open var firstDate: MayaDate {
     return MayaDate(day: 1, month: month, year: year)
   }
 
-  public var lastDate: MayaDate {
+  open var lastDate: MayaDate {
     return MayaDate(day: 0, month: month+1, year: year)
   }
 
-  public var weeks: [[MayaDate]] {
+  open var weeks: [[MayaDate]] {
     var weeks = [[MayaDate]]()
     for index in 0...numberOfWeeks {
       let days = dates.filter { $0.weekOfMonth == index &&
-        MayaMonth(mayaDate: $0).compare(self) == .OrderedSame }
+        MayaMonth(mayaDate: $0).compare(self) == .orderedSame }
       if days.count > 0 {
         weeks.append(days)
       }
@@ -71,15 +71,15 @@ public class MayaMonth: NSObject {
     return weeks
   }
 
-  public var firstWeek: [MayaDate] {
+  open var firstWeek: [MayaDate] {
     return weeks[0]
   }
 
-  public var lastWeek: [MayaDate] {
+  open var lastWeek: [MayaDate] {
     return weeks[weeks.count-1]
   }
 
-  public var dates: [MayaDate] {
+  open var dates: [MayaDate] {
     var dates = [MayaDate]()
     for index in 1...numberOfDays {
       dates.append(MayaDate(day: index, month: month, year: year))
@@ -87,34 +87,34 @@ public class MayaMonth: NSObject {
     return dates
   }
 
-  public var previousMonth: MayaMonth {
+  open var previousMonth: MayaMonth {
     return monthWithOffset(-1)
   }
 
-  public var nextMonth: MayaMonth {
+  open var nextMonth: MayaMonth {
     return monthWithOffset(1)
   }
 
-  public func monthWithOffset(offset: Int) -> MayaMonth {
+  open func monthWithOffset(_ offset: Int) -> MayaMonth {
     return MayaMonth(month: month+offset, year: year)
   }
 
-  public func numberOfMonthsUntil(month: MayaMonth) -> Int {
-    let components = MayaMonth.calendar.components(.Month, fromDate: date, toDate: month.date,
+  open func numberOfMonthsUntil(_ month: MayaMonth) -> Int {
+    let components = (MayaMonth.calendar as NSCalendar).components(.month, from: date, to: month.date,
       options: [])
 
     return components.month
   }
 
-  override public func isEqual(object: AnyObject?) -> Bool {
+  override open func isEqual(_ object: Any?) -> Bool {
     guard let rhs = object as? MayaMonth else {
       return false
     }
 
-    return date.compare(rhs.date) == .OrderedSame
+    return date.compare(rhs.date) == .orderedSame
   }
 
-  public func compare(otherMonth: MayaMonth) -> NSComparisonResult {
+  open func compare(_ otherMonth: MayaMonth) -> ComparisonResult {
     return date.compare(otherMonth.date)
   }
   

@@ -15,8 +15,8 @@ class MayaCalendarMonthCollectionViewCell: UICollectionViewCell {
 
   var clickBlock: ((MayaDate) -> Void)?
 
-  @IBAction func dayClicked(button: UIButton) {
-    guard let index = dayButtons.indexOf(button) else {
+  @IBAction func dayClicked(_ button: UIButton) {
+    guard let index = dayButtons.index(of: button) else {
       return
     }
     viewModel.viewModelClicked(index)
@@ -35,8 +35,8 @@ class MayaCalendarMonthCollectionViewCell: UICollectionViewCell {
         let dayViewModel = viewModel.viewModels[index]
         let dayButton = dayButtons[index]
         
-        dayButton.setTitle(dayViewModel.day, forState: .Normal)
-        dayButton.setTitleColor(dayViewModel.textColor, forState: .Normal)
+        dayButton.setTitle(dayViewModel.day, for: UIControlState())
+        dayButton.setTitleColor(dayViewModel.textColor, for: UIControlState())
         dayButton.titleLabel?.font = dayViewModel.font
         dayButton.backgroundColor = dayViewModel.backgroundColor
       }

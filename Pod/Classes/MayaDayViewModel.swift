@@ -10,7 +10,7 @@ import UIKit
 
 class MayaDayViewModel {
 
-  private let date: MayaDate
+  fileprivate let date: MayaDate
   
   let day: String
   let font: UIFont

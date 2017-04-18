@@ -8,73 +8,73 @@
 
 import UIKit
 
-public class MayaCalendarView: UIView {
+open class MayaCalendarView: UIView {
 
-  private var backButton: UIButton = UIButton(type: .System)
-  private var forwardButton: UIButton = UIButton(type: .System)
-  private var monthLabel: UILabel = UILabel(frame: .zero)
-  private var collectionView: UICollectionView
-  private var collectionViewFlowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+  fileprivate var backButton: UIButton = UIButton(type: .system)
+  fileprivate var forwardButton: UIButton = UIButton(type: .system)
+  fileprivate var monthLabel: UILabel = UILabel(frame: .zero)
+  fileprivate var collectionView: UICollectionView
+  fileprivate var collectionViewFlowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 
-  public var dataSource: MayaCalendarDataSource? {
+  open var dataSource: MayaCalendarDataSource? {
     didSet {
       reloadData()
     }
   }
-  public var delegate:  MayaCalendarDelegate?
+  open var delegate:  MayaCalendarDelegate?
 
-  @IBOutlet public var ibDataSource: AnyObject? {
+  @IBOutlet open var ibDataSource: AnyObject? {
     get { return dataSource }
     set { dataSource = newValue as? MayaCalendarDataSource }
   }
-  @IBOutlet public var ibDelegate: AnyObject? {
+  @IBOutlet open var ibDelegate: AnyObject? {
     get { return delegate }
     set { delegate = newValue as? MayaCalendarDelegate }
   }
 
-  @IBInspectable public var monthFont: UIFont = .boldSystemFontOfSize(18) {
+  @IBInspectable open var monthFont: UIFont = .boldSystemFont(ofSize: 18) {
     didSet {
       monthLabel.font = monthFont
     }
   }
 
-  @IBInspectable public var weekdayFont: UIFont = .systemFontOfSize(15) {
+  @IBInspectable open var weekdayFont: UIFont = .systemFont(ofSize: 15) {
     didSet {
       reloadData()
     }
   }
 
-  @IBInspectable public var dayFont: UIFont = .systemFontOfSize(16) {
+  @IBInspectable open var dayFont: UIFont = .systemFont(ofSize: 16) {
     didSet {
       reloadData()
     }
   }
 
-  @IBInspectable public var weekdayTextColor: UIColor = UIColor.blackColor() {
+  @IBInspectable open var weekdayTextColor: UIColor = UIColor.black {
     didSet {
       reloadData()
     }
   }
 
-  @IBInspectable public var backButtonImage: UIImage? = MayaButtonImage.leftArrowImage {
+  @IBInspectable open var backButtonImage: UIImage? = MayaButtonImage.leftArrowImage {
     didSet {
-      backButton.setImage(backButtonImage, forState: .Normal)
+      backButton.setImage(backButtonImage, for: UIControlState())
     }
   }
 
-  @IBInspectable public var forwardButtonImage: UIImage? = MayaButtonImage.rightArrowImage {
+  @IBInspectable open var forwardButtonImage: UIImage? = MayaButtonImage.rightArrowImage {
     didSet {
-      forwardButton.setImage(forwardButtonImage, forState: .Normal)
+      forwardButton.setImage(forwardButtonImage, for: UIControlState())
     }
   }
 
-  @IBInspectable public var headerHeight: CGFloat = 44 {
+  @IBInspectable open var headerHeight: CGFloat = 44 {
     didSet {
       setupButtonConstraints()
     }
   }
 
-  public var currentMonth: MayaMonth {
+  open var currentMonth: MayaMonth {
     get {
       return _currentMonth
     }
@@ -84,42 +84,42 @@ public class MayaCalendarView: UIView {
     }
   }
 
-  private var _currentMonth: MayaMonth = MayaMonth(date: NSDate()) {
+  fileprivate var _currentMonth: MayaMonth = MayaMonth(date: Date()) {
     didSet {
-      if currentMonth.compare(firstMonth) == .OrderedAscending {
+      if currentMonth.compare(firstMonth) == .orderedAscending {
         firstMonth = currentMonth
-      } else if currentMonth.compare(lastMonth) == .OrderedDescending {
+      } else if currentMonth.compare(lastMonth) == .orderedDescending {
         lastMonth = currentMonth
       }
-      UIView.transitionWithView(monthLabel, duration: 0.25, options: .TransitionCrossDissolve,
+      UIView.transition(with: monthLabel, duration: 0.25, options: .transitionCrossDissolve,
                                 animations: { () -> Void in
                                   self.monthLabel.text = self.dataSource?.calendarMonthName?(self.currentMonth) ??
                                     self.currentMonth.name
         }, completion: nil)
-      backButton.enabled = currentMonth.numberOfMonthsUntil(firstMonth) != 0
-      forwardButton.enabled = currentMonth.numberOfMonthsUntil(lastMonth) != 0
+      backButton.isEnabled = currentMonth.numberOfMonthsUntil(firstMonth) != 0
+      forwardButton.isEnabled = currentMonth.numberOfMonthsUntil(lastMonth) != 0
     }
   }
 
-  public var firstMonth: MayaMonth = MayaMonth(date: NSDate()) {
+  open var firstMonth: MayaMonth = MayaMonth(date: Date()) {
     didSet {
       reloadData()
     }
   }
 
-  public var lastMonth: MayaMonth = MayaMonth(date: NSDate()).monthWithOffset(12) {
+  open var lastMonth: MayaMonth = MayaMonth(date: Date()).monthWithOffset(12) {
     didSet {
       reloadData()
     }
   }
 
-  public var weekdays: [String] = ["su", "mo", "tu", "we", "th", "fr", "sa"] {
+  open var weekdays: [String] = ["su", "mo", "tu", "we", "th", "fr", "sa"] {
     didSet {
       reloadData()
     }
   }
 
-  override public var frame: CGRect {
+  override open var frame: CGRect {
     didSet {
       collectionViewFlowLayout.invalidateLayout()
     }
@@ -137,7 +137,7 @@ public class MayaCalendarView: UIView {
     setupViews()
   }
 
-  override public func layoutSubviews() {
+  override open func layoutSubviews() {
     collectionViewFlowLayout.invalidateLayout()
     collectionView.reloadData()
     scrollToMonth(_currentMonth)
@@ -148,65 +148,65 @@ public class MayaCalendarView: UIView {
 // MARK: Setup
 extension MayaCalendarView {
 
-  private func setupViews() {
+  fileprivate func setupViews() {
     setupButtons()
     setupMonthLabel()
     setupCollectionView()
   }
 
-  private func setupButtons() {
-    backButton.setImage(MayaButtonImage.leftArrowImage, forState: .Normal)
-    backButton.tintColor = UIColor.blackColor()
+  fileprivate func setupButtons() {
+    backButton.setImage(MayaButtonImage.leftArrowImage, for: UIControlState())
+    backButton.tintColor = UIColor.black
     backButton.addTarget(self, action: #selector(MayaCalendarView.backClick),
-                         forControlEvents: .TouchUpInside)
+                         for: .touchUpInside)
     backButton.translatesAutoresizingMaskIntoConstraints = false
     addSubview(backButton)
 
 
-    forwardButton.setImage(MayaButtonImage.rightArrowImage, forState: .Normal)
-    forwardButton.tintColor = UIColor.blackColor()
+    forwardButton.setImage(MayaButtonImage.rightArrowImage, for: UIControlState())
+    forwardButton.tintColor = UIColor.black
     forwardButton.addTarget(self, action: #selector(MayaCalendarView.forwardClick),
-                            forControlEvents: .TouchUpInside)
+                            for: .touchUpInside)
     forwardButton.translatesAutoresizingMaskIntoConstraints = false
     addSubview(forwardButton)
 
 
-    backButton.enabled = currentMonth.numberOfMonthsUntil(firstMonth) != 0
-    forwardButton.enabled = currentMonth.numberOfMonthsUntil(lastMonth) != 0
+    backButton.isEnabled = currentMonth.numberOfMonthsUntil(firstMonth) != 0
+    forwardButton.isEnabled = currentMonth.numberOfMonthsUntil(lastMonth) != 0
   }
 
-  private func setupButtonConstraints() {
+  fileprivate func setupButtonConstraints() {
     removeConstraints(backButton)
     removeConstraints(forwardButton)
     addConstraints(NSLayoutConstraint
-      .constraintsWithVisualFormat("H:|-0-[backButton(44)]",
-        options: [.AlignAllLeading], metrics: nil,
+      .constraints(withVisualFormat: "H:|-0-[backButton(44)]",
+        options: [.alignAllLeading], metrics: nil,
         views: ["backButton": backButton]))
     addConstraints(NSLayoutConstraint
-      .constraintsWithVisualFormat("V:|-0-[backButton(\(headerHeight))]",
-        options: [.AlignAllLeading], metrics: nil,
+      .constraints(withVisualFormat: "V:|-0-[backButton(\(headerHeight))]",
+        options: [.alignAllLeading], metrics: nil,
         views: ["backButton": backButton]))
 
     addConstraints(NSLayoutConstraint
-      .constraintsWithVisualFormat("H:[forwardButton(44)]-0-|",
-        options: [.AlignAllLeading], metrics: nil,
+      .constraints(withVisualFormat: "H:[forwardButton(44)]-0-|",
+        options: [.alignAllLeading], metrics: nil,
         views: ["forwardButton": forwardButton]))
     addConstraints(NSLayoutConstraint
-      .constraintsWithVisualFormat("V:|-0-[forwardButton(\(headerHeight))]",
-        options: [.AlignAllLeading], metrics: nil,
+      .constraints(withVisualFormat: "V:|-0-[forwardButton(\(headerHeight))]",
+        options: [.alignAllLeading], metrics: nil,
         views: ["forwardButton": forwardButton]))
     addConstraints(NSLayoutConstraint
-      .constraintsWithVisualFormat("H:[backButton]-8-[monthLabel]-8-[forwardButton]",
+      .constraints(withVisualFormat: "H:[backButton]-8-[monthLabel]-8-[forwardButton]",
         options: NSLayoutFormatOptions(rawValue: 0), metrics: nil,
         views: ["monthLabel": monthLabel, "forwardButton": forwardButton,
           "backButton": backButton]))
-    addConstraint(NSLayoutConstraint(item: monthLabel, attribute: .CenterY, relatedBy: .Equal,
-      toItem: backButton, attribute: .CenterY, multiplier: 1, constant: 0))
+    addConstraint(NSLayoutConstraint(item: monthLabel, attribute: .centerY, relatedBy: .equal,
+      toItem: backButton, attribute: .centerY, multiplier: 1, constant: 0))
   }
 
-  private func setupMonthLabel() {
+  fileprivate func setupMonthLabel() {
     monthLabel.font = monthFont
-    monthLabel.textAlignment = .Center
+    monthLabel.textAlignment = .center
     monthLabel.text = dataSource?.calendarMonthName?(currentMonth) ?? currentMonth.name
     monthLabel.translatesAutoresizingMaskIntoConstraints = false
     addSubview(monthLabel)
@@ -216,28 +216,28 @@ extension MayaCalendarView {
   }
 
 
-  private func setupCollectionView() {
-    collectionViewFlowLayout.sectionInset = UIEdgeInsetsZero
+  fileprivate func setupCollectionView() {
+    collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
     collectionViewFlowLayout.minimumLineSpacing = 0
     collectionViewFlowLayout.minimumInteritemSpacing = 0
     collectionView.collectionViewLayout = collectionViewFlowLayout
-    collectionViewFlowLayout.scrollDirection = .Horizontal
+    collectionViewFlowLayout.scrollDirection = .horizontal
     collectionView.showsHorizontalScrollIndicator = false
-    collectionView.pagingEnabled = true
+    collectionView.isPagingEnabled = true
     collectionView.delegate = self
     collectionView.dataSource = self
-    collectionView.backgroundColor = UIColor.clearColor()
-    collectionView.registerNib(UINib(nibName: "MayaCalendarMonthCollectionViewCell",
-      bundle: NSBundle(forClass: MayaCalendarView.self)),
+    collectionView.backgroundColor = UIColor.clear
+    collectionView.register(UINib(nibName: "MayaCalendarMonthCollectionViewCell",
+      bundle: Bundle(for: MayaCalendarView.self)),
                                forCellWithReuseIdentifier: "MayaCalendarMonthCollectionViewCell")
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     addSubview(collectionView)
     addConstraints(NSLayoutConstraint
-      .constraintsWithVisualFormat("H:|-0-[collectionView]-0-|",
+      .constraints(withVisualFormat: "H:|-0-[collectionView]-0-|",
         options: NSLayoutFormatOptions(rawValue: 0), metrics: nil,
         views: ["collectionView": collectionView]))
     addConstraints(NSLayoutConstraint
-      .constraintsWithVisualFormat("V:[monthLabel]-0-[collectionView]-0-|",
+      .constraints(withVisualFormat: "V:[monthLabel]-0-[collectionView]-0-|",
         options: NSLayoutFormatOptions(rawValue: 0), metrics: nil,
         views: ["monthLabel": monthLabel, "collectionView": collectionView]))
   }
@@ -260,13 +260,13 @@ extension MayaCalendarView {
     scrollToMonth(currentMonth.nextMonth)
   }
 
-  private func scrollToMonth(month: MayaMonth) {
+  fileprivate func scrollToMonth(_ month: MayaMonth) {
     let index = firstMonth.numberOfMonthsUntil(month)
     guard index <= firstMonth.numberOfMonthsUntil(lastMonth) && index >= 0 else {
       return
     }
-    let indexPath = NSIndexPath(forItem: index, inSection: 0)
-    collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally,
+    let indexPath = IndexPath(item: index, section: 0)
+    collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally,
                                            animated: true)
   }
 
@@ -277,11 +277,11 @@ extension MayaCalendarView {
 extension MayaCalendarView: UICollectionViewDataSource, UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout {
 
-  public func collectionView(collectionView: UICollectionView,
-                             cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+  public func collectionView(_ collectionView: UICollectionView,
+                             cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView
-      .dequeueReusableCellWithReuseIdentifier("MayaCalendarMonthCollectionViewCell",
-                                              forIndexPath: indexPath)
+      .dequeueReusableCell(withReuseIdentifier: "MayaCalendarMonthCollectionViewCell",
+                                              for: indexPath)
     if let cell = cell as? MayaCalendarMonthCollectionViewCell {
       let month = monthForIndexPath(indexPath)
       cell.viewModel = MayaMonthViewModel(month: month, weekdays: weekdays,
@@ -292,19 +292,19 @@ UICollectionViewDelegateFlowLayout {
     return cell
   }
 
-  public func collectionView(collectionView: UICollectionView,
+  public func collectionView(_ collectionView: UICollectionView,
                              numberOfItemsInSection section: Int) -> Int {
     return firstMonth.numberOfMonthsUntil(lastMonth) + 1
   }
 
-  public func collectionView(collectionView: UICollectionView,
+  public func collectionView(_ collectionView: UICollectionView,
                              layout collectionViewLayout: UICollectionViewLayout,
-                                    sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+                                    sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: bounds.size.width, height: bounds.size.height - 44)
   }
 
-  public func scrollViewDidScroll(scrollView: UIScrollView) {
-    let month = monthForIndexPath(NSIndexPath(forItem: currentPage(), inSection: 0))
+  public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let month = monthForIndexPath(IndexPath(item: currentPage(), section: 0))
     if month != _currentMonth {
       _currentMonth = month
       delegate?.calendarDidChangeMonth?(_currentMonth)
@@ -316,28 +316,28 @@ UICollectionViewDelegateFlowLayout {
 // MARK: Helpers
 extension MayaCalendarView {
 
-  private func dayClicked(date: MayaDate) {
-    if date.compare(currentMonth.firstDate) == .OrderedAscending {
+  fileprivate func dayClicked(_ date: MayaDate) {
+    if date.compare(currentMonth.firstDate) == .orderedAscending {
       scrollToMonth(currentMonth.previousMonth)
-    } else if date.compare(currentMonth.lastDate) == .OrderedDescending {
+    } else if date.compare(currentMonth.lastDate) == .orderedDescending {
       scrollToMonth(currentMonth.nextMonth)
     }
     delegate?.calendarDidSelectDate?(date)
   }
 
-  private func monthForIndexPath(indexPath: NSIndexPath) -> MayaMonth {
+  fileprivate func monthForIndexPath(_ indexPath: IndexPath) -> MayaMonth {
     if indexPath.row == 0 {
       return firstMonth
     }
     return firstMonth.monthWithOffset(indexPath.item)
   }
 
-  private func currentPage() -> Int {
+  fileprivate func currentPage() -> Int {
     let currentPage = self.collectionView.contentOffset.x / self.collectionView.frame.size.width
     return Int(round(currentPage))
   }
 
-  private func removeConstraints(view: UIView) {
+  fileprivate func removeConstraints(_ view: UIView) {
     var list = [NSLayoutConstraint]()
     if let superview = view.superview {
       for constraint in superview.constraints {

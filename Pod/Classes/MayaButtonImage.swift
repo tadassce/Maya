@@ -14,17 +14,17 @@ class MayaButtonImage {
   static var rightArrowImage: UIImage {
     let bounds = CGRect(x: 0, y: 0, width: 16, height: 16)
 
-    UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.mainScreen().scale)
+    UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
 
     //// Color Declarations
-    let strokeColor = UIColor.blackColor()
+    let strokeColor = UIColor.black
 
     //// Bezier Drawing
     let bezierPath = UIBezierPath()
-    bezierPath.moveToPoint(CGPointMake(0.77, 0.5))
-    bezierPath.addLineToPoint(CGPointMake(7.63, 7.91))
-    bezierPath.addLineToPoint(CGPointMake(0.77, 15.34))
-    bezierPath.lineCapStyle = .Square;
+    bezierPath.move(to: CGPoint(x: 0.77, y: 0.5))
+    bezierPath.addLine(to: CGPoint(x: 7.63, y: 7.91))
+    bezierPath.addLine(to: CGPoint(x: 0.77, y: 15.34))
+    bezierPath.lineCapStyle = .square;
 
     strokeColor.setStroke()
     bezierPath.lineWidth = 1
@@ -39,16 +39,16 @@ class MayaButtonImage {
   static var leftArrowImage: UIImage {
     let bounds = CGRect(x: 0, y: 0, width: 16, height: 16)
 
-    UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.mainScreen().scale)
+    UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
 
-    let strokeColor2 = UIColor.blackColor()
+    let strokeColor2 = UIColor.black
 
     //// Bezier 2 Drawing
     let bezier2Path = UIBezierPath()
-    bezier2Path.moveToPoint(CGPointMake(8.13, 0.5))
-    bezier2Path.addLineToPoint(CGPointMake(1.27, 7.91))
-    bezier2Path.addLineToPoint(CGPointMake(8.13, 15.34))
-    bezier2Path.lineCapStyle = .Square;
+    bezier2Path.move(to: CGPoint(x: 8.13, y: 0.5))
+    bezier2Path.addLine(to: CGPoint(x: 1.27, y: 7.91))
+    bezier2Path.addLine(to: CGPoint(x: 8.13, y: 15.34))
+    bezier2Path.lineCapStyle = .square;
 
     strokeColor2.setStroke()
     bezier2Path.lineWidth = 1
